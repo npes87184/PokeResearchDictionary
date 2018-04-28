@@ -21,6 +21,7 @@ Note: Only support Traditional Chinese now.
 # Thanks
 * [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) for icon
 * [android-about-page](https://github.com/medyo/android-about-page)
+* [bluelamb at ptt](https://www.ptt.cc/bbs/PokemonGO/M.1522472393.A.35E.html)
 
 # License
 ```
