@@ -7,9 +7,9 @@ This app uses the quick setting tile api from android version 7 to create a quic
 Note: Only support Traditional Chinese now.
 
 # Pictures
-![1](https://raw.github.com/npes87184/PokeResearchDictionary/master/img/1.png)
+<img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/1.png" width="450">
 
-![2](https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.pnng)
+<img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
 * 1.0.0
