@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">寶可夢田野字典</string>
+    <string name="all_rules">所有列表:</string>
+    <string name="dict_dialog_hint">飛行系</string>
+    <string name="dict_dialog_ok">OK</string>
+    <string name="dict_dialog_cancel">結束</string>
+    <string name="no_result">無結果</string>
+
+
+    <string name="contact">聯繫我</string>
+    <string name="subject">PokeDict</string>
+    <string name="mail_body">問題:\n手機型號: \nAndroid 版本:\nOther:</string>
+    <string name="version_tag">版本:\u0020</string>
+    <string name="author_tag">作者:\u0020</string>
+    <string name="web_tag">作者部落格</string>
+</resources>

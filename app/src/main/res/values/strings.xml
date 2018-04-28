@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Poke Research Dictionary</string>
+    <string name="author_name" translatable="false">npes87184</string>
+    <string name="all_rules">All rules:</string>
+
+    <string name="dict_dialog_hint">Flying type</string>
+    <string name="dict_dialog_ok">OK</string>
+    <string name="dict_dialog_cancel">End</string>
+    <string name="no_result">No result</string>
+
+    <string name="contact">Contact Me</string>
+    <string name="subject">PokeDict</string>
+    <string name="mail_body">My problem is:\nMy phone is: \nMy android version is:\nOther:</string>
+    <string name="version_tag">Version:\u0020</string>
+    <string name="author_tag">Author:\u0020</string>
+    <string name="web_tag">Visit my website</string>
+</resources>
