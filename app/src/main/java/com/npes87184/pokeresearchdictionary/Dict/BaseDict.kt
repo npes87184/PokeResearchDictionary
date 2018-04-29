@@ -1,6 +1,6 @@
 package com.npes87184.pokeresearchdictionary.Dict
 
-open abstract class BaseDict() {
+open abstract class BaseDict {
     abstract val mapMissionReward : Map<String, String>
 
     init {
@@ -12,7 +12,7 @@ open abstract class BaseDict() {
 
         for ((k, v) in mapMissionReward) {
             if (k.contains(key, true)) {
-                ret.put(k, v)
+                ret[k] = v
             }
         }
         return ret

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         val textView = findViewById<TextView>(R.id.allRuleTextView)
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener { _ ->
             val intent = Intent(this, AboutActivity::class.java)
             startActivity(intent)
         }

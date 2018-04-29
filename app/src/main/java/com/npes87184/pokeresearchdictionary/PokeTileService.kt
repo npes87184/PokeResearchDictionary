@@ -1,7 +1,6 @@
 package com.npes87184.pokeresearchdictionary
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.service.quicksettings.TileService
 import android.text.Editable
 import android.text.TextWatcher
@@ -44,7 +43,7 @@ class PokeTileService : TileService() {
         val builder = AlertDialog.Builder(this)
 
         builder.setView(layout)
-               .setPositiveButton(R.string.dict_dialog_cancel, DialogInterface.OnClickListener { _, _ -> })
+               .setPositiveButton(R.string.dict_dialog_cancel, { _, _ -> })
         showDialog(builder.create())
     }
 }

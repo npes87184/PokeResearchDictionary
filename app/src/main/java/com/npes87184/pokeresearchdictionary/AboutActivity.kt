@@ -55,11 +55,9 @@ class AboutActivity : Activity() {
         val licenseElement = Element()
         licenseElement.title = "Open Source License"
         licenseElement.iconDrawable = R.drawable.about_icon_link
-        licenseElement.onClickListener = (object : View.OnClickListener {
-            override fun onClick(v: View) {
-                val intent = Intent(applicationContext, LicenseActivity::class.java)
-                startActivity(intent)
-            }
+        licenseElement.onClickListener = (View.OnClickListener {
+            val intent = Intent(applicationContext, LicenseActivity::class.java)
+            startActivity(intent)
         })
 
         val aboutPage = AboutPage(this)

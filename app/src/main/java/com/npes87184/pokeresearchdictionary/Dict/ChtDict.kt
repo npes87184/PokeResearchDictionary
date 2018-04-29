@@ -1,7 +1,7 @@
 package com.npes87184.pokeresearchdictionary.Dict
 
 class ChtDict : BaseDict() {
-    override val mapMissionReward = mapOf<String, String>(
+    override val mapMissionReward = mapOf(
             "參加1次道館戰" to "猴怪/戴魯比/小火龍/蚊香蝌蚪/妙蛙種子",
             "參加5次道館戰" to "腕力/妙蛙種子",
             "贏得3次道館戰" to "迷唇姐",
