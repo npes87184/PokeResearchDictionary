@@ -13,4 +13,5 @@
     <string name="version_tag">版本:\u0020</string>
     <string name="author_tag">作者:\u0020</string>
     <string name="web_tag">作者部落格</string>
+    <string name="rate">評分</string>
 </resources>

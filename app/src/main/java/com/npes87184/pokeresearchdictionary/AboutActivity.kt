@@ -43,14 +43,14 @@ class AboutActivity : Activity() {
         webIntent.data = Uri.parse(url)
         webElement.intent = webIntent
 
-        /*
+
         val playStoreElement = Element()
-        playStoreElement.setTitle(getString(R.string.rate))
-        playStoreElement.setIconDrawable(R.drawable.about_icon_google_play)
-        val uri = Uri.parse("market://details?id=com.npes87184.s2tdroid.donate")
+        playStoreElement.title = getString(R.string.rate)
+        playStoreElement.iconDrawable = R.drawable.about_icon_google_play
+        val uri = Uri.parse("market://details?id=com.npes87184.pokeresearchdictionary")
         val goToMarket = Intent(Intent.ACTION_VIEW, uri)
         playStoreElement.intent = goToMarket
-        */
+
 
         val licenseElement = Element()
         licenseElement.title = "Open Source License"
@@ -66,8 +66,8 @@ class AboutActivity : Activity() {
             .addItem(authorElement)
             .addItem(emailElement)
             .addItem(webElement)
-       //     .addItem(playStoreElement)
-            .addGitHub("npes87184")
+            .addItem(playStoreElement)
+            .addGitHub("npes87184/PokeResearchDictionary")
             .addItem(licenseElement)
             .create()
 
