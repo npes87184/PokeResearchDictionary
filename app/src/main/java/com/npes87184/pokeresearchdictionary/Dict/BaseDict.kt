@@ -102,7 +102,7 @@ class Updater(private val textView: TextView, private val strFileName: String, p
     override fun onPreExecute() {
         super.onPreExecute()
         progressDialog = ProgressDialog.show(context,
-                context!!.resources.getString(R.string.check_update), context!!.resources.getString(R.string.checking))
+                context!!.resources.getString(R.string.check_update), context.resources.getString(R.string.checking))
     }
 
     override fun onPostExecute(result: String?) {
@@ -115,7 +115,7 @@ class Updater(private val textView: TextView, private val strFileName: String, p
         if (result != null) {
             if (jsDictRet.version!! > currentVersion) {
                 val fileJs = File(context!!.filesDir, strFileName)
-                fileJs.writeText(result!!)
+                fileJs.writeText(result)
                 textView.text = timeStampToString(jsDictRet.version!!)
                 dialog.setMessage(R.string.updated)
             } else {

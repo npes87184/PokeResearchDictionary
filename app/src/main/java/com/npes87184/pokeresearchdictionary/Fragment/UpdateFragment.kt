@@ -27,6 +27,7 @@ class UpdateFragment : Fragment() {
         val updateBtn = v.findViewById<Button>(R.id.updateBtn)
         val versionText = v.findViewById<TextView>(R.id.version)
         versionText.text = chtDict.getVersion()
+        chtDict.update(versionText)
 
         updateBtn.setOnClickListener(View.OnClickListener {
             chtDict.update(versionText)
@@ -46,7 +47,6 @@ class UpdateFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance() =
-                UpdateFragment().apply {
-                }
+                UpdateFragment()
     }
 }

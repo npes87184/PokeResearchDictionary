@@ -44,7 +44,6 @@ class ResearchListFragment : Fragment() {
          */
         @JvmStatic
         fun newInstance() =
-                ResearchListFragment().apply {
-                }
+                ResearchListFragment()
     }
 }
