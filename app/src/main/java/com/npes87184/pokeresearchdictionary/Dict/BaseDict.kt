@@ -1,6 +1,6 @@
 package com.npes87184.pokeresearchdictionary.Dict
 
-open abstract class BaseDict {
+abstract class BaseDict {
     abstract val mapMissionReward : Map<String, String>
 
     init {
