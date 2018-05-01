@@ -20,7 +20,7 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
         val chtDict = ChtDict()
 
         val editText = findViewById<EditText>(R.id.editText)
-        val textView = findViewById<TextView>(R.id.textView)
+        val textView = findViewById<TextView>(R.id.content)
         val cancelBtn = findViewById<Button>(R.id.button)
 
         editText.addTextChangedListener(object : TextWatcher {

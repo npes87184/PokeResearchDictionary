@@ -17,7 +17,7 @@ class ResearchListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_research_list, container, false)
-        val textView = v.findViewById<TextView>(R.id.textView)
+        val textView = v.findViewById<TextView>(R.id.content)
         val fab = v.findViewById(R.id.fab) as FloatingActionButton
         var str = getString(R.string.all_rules)
         val chtDict = ChtDict()
