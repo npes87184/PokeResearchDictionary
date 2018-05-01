@@ -6,6 +6,9 @@ import android.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import com.npes87184.pokeresearchdictionary.Dict.ChtDict
 
 import com.npes87184.pokeresearchdictionary.R
 
@@ -18,8 +21,18 @@ import com.npes87184.pokeresearchdictionary.R
 class UpdateFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update, container, false)
+        val v = inflater.inflate(R.layout.fragment_update, container, false)
+        val chtDict = ChtDict()
+        chtDict.setUp(context)
+        val updateBtn = v.findViewById<Button>(R.id.updateBtn)
+        val versionText = v.findViewById<TextView>(R.id.version)
+        versionText.text = chtDict.getVersion()
+
+        updateBtn.setOnClickListener(View.OnClickListener {
+            chtDict.update(versionText)
+        })
+
+        return v
     }
 
 

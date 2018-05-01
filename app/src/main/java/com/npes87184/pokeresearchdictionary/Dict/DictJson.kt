@@ -5,7 +5,6 @@ class DictJson {
         val key: String? = null
         val value: String? = null
     }
-
     var version: Long? = null
     var data: List<Pair>? = null
 }

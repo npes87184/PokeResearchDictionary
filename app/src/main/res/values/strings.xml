@@ -21,8 +21,19 @@
     <!-- Navigation related -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="list">All list</string>
+    <string name="about">About</string>
+    <string name="share">Share</string>
 
     <!-- Update fragment related -->
     <string name="current_version">Current version:</string>
     <string name="update">Update</string>
+    <string name="check_update">Check Update</string>
+    <string name="checking">Checking\u2026</string>
+    <string name="current_is_latest">Current version of database is the latest.</string>
+    <string name="no_network">No network</string>
+    <string name="updated">Database updated!</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
 </resources>

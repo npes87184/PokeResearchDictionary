@@ -1,14 +1,14 @@
 package com.npes87184.pokeresearchdictionary
 
+import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
 import com.npes87184.pokeresearchdictionary.Fragment.ResearchListFragment
+import com.npes87184.pokeresearchdictionary.Fragment.UpdateFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -41,25 +41,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
+        val fm = fragmentManager
+        val ft = fm.beginTransaction()
+
         when (item.itemId) {
-            R.id.nav_camera -> {
-                // Handle the camera action
+            R.id.nav_all_list -> {
+                ft.replace(R.id.container, ResearchListFragment.newInstance())
+                ft.commit()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_update -> {
+                ft.replace(R.id.container, UpdateFragment.newInstance())
+                ft.commit()
             }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
+            R.id.nav_about -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
+                val sharingIntent = Intent(android.content.Intent.ACTION_SEND)
+                sharingIntent.type = "text/plain"
+                val shareBody = "https://play.google.com/store/apps/details?id=com.npes87184.pokeresearchdictionary"
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name))
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody)
+                startActivity(Intent.createChooser(sharingIntent, getString(R.string.share)))
             }
         }
 
