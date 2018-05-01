@@ -13,7 +13,6 @@ import java.util.*
 import android.app.ProgressDialog
 import com.npes87184.pokeresearchdictionary.R
 import android.app.AlertDialog
-import android.util.Log
 import android.widget.TextView
 
 fun timeStampToString(stampSecond: Long): String {
@@ -38,24 +37,34 @@ abstract class BaseDict {
 
     }
 
-    private fun readDict(fileJs: File) {
+    private fun readDict(fileJs: File): DictJson {
         var gson = Gson()
         val bufferedReader: BufferedReader = fileJs.bufferedReader()
         val strJson = bufferedReader.use { it.readText() }
-        jsDict = gson.fromJson(strJson, DictJson::class.java)
         bufferedReader.close()
+        return gson.fromJson(strJson, DictJson::class.java)
     }
 
     fun setUp(context: Context) {
         this.context = context
         filesDir = context.filesDir
         val fileJs = File(context.filesDir, strDictFileName)
+        val fileTmpJs = File(context.filesDir, "tmp.json")
 
         if (!fileJs.exists()) {
             context.resources.assets.open("data/$strDictFileName").copyTo(FileOutputStream(fileJs.path))
+        } else {
+            context.resources.assets.open("data/$strDictFileName").copyTo(FileOutputStream(fileTmpJs.path))
+            val jsCurrDict = readDict(fileJs)
+            val jsPkgDict = readDict(fileTmpJs)
+
+            if (jsPkgDict.version!! > jsCurrDict.version!!) {
+                fileJs.delete()
+                context.resources.assets.open("data/$strDictFileName").copyTo(FileOutputStream(fileJs.path))
+            }
+            fileTmpJs.delete()
         }
-        readDict(fileJs)
-        Log.i("version", jsDict!!.version.toString())
+        jsDict = readDict(fileJs)
     }
 
     fun getVersion(): String {
@@ -115,6 +124,7 @@ class Updater(private val textView: TextView, private val strFileName: String, p
         if (result != null) {
             if (jsDictRet.version!! > currentVersion) {
                 val fileJs = File(context!!.filesDir, strFileName)
+                fileJs.delete()
                 fileJs.writeText(result)
                 textView.text = timeStampToString(jsDictRet.version!!)
                 dialog.setMessage(R.string.updated)
