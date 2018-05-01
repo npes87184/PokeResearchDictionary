@@ -3,11 +3,13 @@
     <string name="author_name" translatable="false">npes87184</string>
     <string name="all_rules">All rules:</string>
 
+    <!-- dict dialog related -->
     <string name="dict_dialog_hint">Flying type</string>
     <string name="dict_dialog_ok">OK</string>
     <string name="dict_dialog_cancel">End</string>
     <string name="no_result">No result</string>
 
+    <!-- about page related -->
     <string name="contact">Contact Me</string>
     <string name="subject">PokeDict</string>
     <string name="mail_body">My problem is:\nMy phone is: \nMy android version is:\nOther:</string>
@@ -16,9 +18,11 @@
     <string name="web_tag">Visit my website</string>
     <string name="rate">Rate</string>
 
+    <!-- Navigation related -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Update fragment related -->
+    <string name="current_version">Current version:</string>
+    <string name="update">Update</string>
 </resources>

@@ -21,10 +21,11 @@ class ResearchListFragment : Fragment() {
         val fab = v.findViewById(R.id.fab) as FloatingActionButton
         var str = getString(R.string.all_rules)
         val chtDict = ChtDict()
+        chtDict.setUp(context)
 
         str = "$str\n\n"
-        for ((k, v) in chtDict.mapMissionReward) {
-            str = "$str* $k: $v\n"
+        for (p in chtDict.jsDict?.data!!.iterator()) {
+            str = "$str* ${p.key}: ${p.value}\n"
         }
         textView.text = str
         textView.movementMethod = ScrollingMovementMethod()

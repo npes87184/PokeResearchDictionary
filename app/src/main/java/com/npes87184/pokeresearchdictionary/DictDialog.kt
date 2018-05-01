@@ -18,6 +18,7 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
         setContentView(R.layout.dict_dialog_layout)
 
         val chtDict = ChtDict()
+        chtDict.setUp(context)
 
         val editText = findViewById<EditText>(R.id.editText)
         val textView = findViewById<TextView>(R.id.content)

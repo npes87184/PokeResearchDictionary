@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">寶可夢田野字典</string>
     <string name="all_rules">所有列表:</string>
+
+    <!-- dict dialog related -->
     <string name="dict_dialog_hint">飛行系</string>
     <string name="dict_dialog_ok">OK</string>
     <string name="dict_dialog_cancel">結束</string>
     <string name="no_result">無結果</string>
 
-
+    <!-- about page related -->
     <string name="contact">聯繫我</string>
     <string name="subject">PokeDict</string>
     <string name="mail_body">問題:\n手機型號: \nAndroid 版本:\nOther:</string>
@@ -14,4 +16,9 @@
     <string name="author_tag">作者:\u0020</string>
     <string name="web_tag">作者部落格</string>
     <string name="rate">評分</string>
+
+    <!-- Update fragment related -->
+    <string name="current_version">目前版本：</string>
+    <string name="update">更新</string>
+
 </resources>
