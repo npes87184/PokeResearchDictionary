@@ -9,7 +9,7 @@ import android.text.method.ScrollingMovementMethod
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import com.npes87184.pokeresearchdictionary.Dict.ChtDict
+import com.npes87184.pokeresearchdictionary.Utils.initDict
 
 
 class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
@@ -17,8 +17,7 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dict_dialog_layout)
 
-        val chtDict = ChtDict()
-        chtDict.setUp(context)
+        val dict = initDict(context)
 
         val editText = findViewById<EditText>(R.id.editText)
         val textView = findViewById<TextView>(R.id.content)
@@ -26,7 +25,7 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
 
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
-                val retMap = chtDict.search(editText.text.toString())
+                val retMap = dict.search(editText.text.toString())
                 var str = String()
 
                 if (editText.text.toString().isNotEmpty() && !retMap.isEmpty()) {

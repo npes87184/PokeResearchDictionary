@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.npes87184.pokeresearchdictionary.Dict.ChtDict
 
 import com.npes87184.pokeresearchdictionary.R
+import com.npes87184.pokeresearchdictionary.Utils.initDict
 
 /**
  * A simple [Fragment] subclass.
@@ -22,15 +22,14 @@ class UpdateFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_update, container, false)
-        val chtDict = ChtDict()
-        chtDict.setUp(context)
+        val dict = initDict(context)
         val updateBtn = v.findViewById<Button>(R.id.updateBtn)
         val versionText = v.findViewById<TextView>(R.id.version)
-        versionText.text = chtDict.getVersion()
-        chtDict.update(versionText)
+        versionText.text = dict.getVersion()
+        dict.update(versionText)
 
         updateBtn.setOnClickListener(View.OnClickListener {
-            chtDict.update(versionText)
+            dict.update(versionText)
         })
 
         return v

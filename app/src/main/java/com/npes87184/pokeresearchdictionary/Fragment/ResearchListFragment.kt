@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.npes87184.pokeresearchdictionary.Dict.ChtDict
 
 import com.npes87184.pokeresearchdictionary.R
 import android.support.design.widget.FloatingActionButton
 import com.npes87184.pokeresearchdictionary.DictDialog
+import com.npes87184.pokeresearchdictionary.Utils.initDict
 
 class ResearchListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -20,11 +20,10 @@ class ResearchListFragment : Fragment() {
         val textView = v.findViewById<TextView>(R.id.content)
         val fab = v.findViewById(R.id.fab) as FloatingActionButton
         var str = getString(R.string.all_rules)
-        val chtDict = ChtDict()
-        chtDict.setUp(context)
+        val dict = initDict(context)
 
         str = "$str\n\n"
-        for (p in chtDict.jsDict?.data!!.iterator()) {
+        for (p in dict.jsDict?.data!!.iterator()) {
             str = "$str* ${p.key}: ${p.value}\n"
         }
         textView.text = str
