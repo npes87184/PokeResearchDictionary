@@ -4,7 +4,7 @@ Search the Pokemon Go research reward quickly from tile.
 
 This app uses the quick setting tile api from android version 7 to create a quick shortcut, which can be easily accessed in game. After click it, user can directly search the reward from dialog.
 
-Note: Only support Traditional Chinese now.
+Note: Only support Traditional Chinese and English now.
 
 # Pictures
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/1.png" width="450">
