@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.npes87184.pokeresearchdictionary.Fragment.ResearchListFragment
+import com.npes87184.pokeresearchdictionary.Fragment.SettingFragment
 import com.npes87184.pokeresearchdictionary.Fragment.UpdateFragment
 import com.npes87184.pokeresearchdictionary.Utils.Keys
 import kotlinx.android.synthetic.main.activity_main.*
@@ -66,6 +67,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             R.id.nav_update -> {
                 ft.replace(R.id.container, UpdateFragment.newInstance())
+                ft.commit()
+            }
+            R.id.nav_setting -> {
+                ft.replace(R.id.container, SettingFragment.newInstance())
                 ft.commit()
             }
             R.id.nav_about -> {

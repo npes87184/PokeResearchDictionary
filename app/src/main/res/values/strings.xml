@@ -23,6 +23,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="list">All list</string>
+    <string name="setting">Setting</string>
     <string name="about">About</string>
     <string name="share">Share</string>
 
@@ -34,5 +35,10 @@
     <string name="current_is_latest">Current version of database is the latest.</string>
     <string name="no_network">No network</string>
     <string name="updated">Database updated!</string>
+
+    <!-- Preference fragment related -->
+    <string name="pref_auto_update">Auto update</string>
+    <string name="pref_auto_update_desc">Auto check update of dictionary every day.</string>
+    <string name="pref_dict_language">The language of dictionary</string>
 
 </resources>
