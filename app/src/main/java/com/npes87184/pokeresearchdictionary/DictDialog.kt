@@ -10,6 +10,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.Utils.initDict
+import android.support.v4.content.ContextCompat.startActivity
+import android.content.Intent
+import android.view.View
+import com.npes87184.pokeresearchdictionary.Utils.Keys
 
 
 class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
@@ -21,7 +25,8 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
 
         val editText = findViewById<EditText>(R.id.editText)
         val textView = findViewById<TextView>(R.id.content)
-        val cancelBtn = findViewById<Button>(R.id.button)
+        val updateBtn = findViewById<Button>(R.id.buttonUpdate)
+        val cancelBtn = findViewById<Button>(R.id.buttonEnd)
 
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -32,8 +37,10 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
                     for ((k, v) in retMap) {
                         str = "$str* $k: $v\n"
                     }
+                    updateBtn.visibility = View.INVISIBLE
                 } else {
                     str = context.getString(R.string.no_result)
+                    updateBtn.visibility = View.VISIBLE
                 }
                 textView.text = str
             }
@@ -46,6 +53,14 @@ class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
         })
 
         textView.movementMethod = ScrollingMovementMethod()
+
+        updateBtn.setOnClickListener({
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra(Keys.KEY_START_FRAGMENT, R.id.nav_update)
+            context.startActivity(intent)
+
+            this.dismiss()
+        })
 
         cancelBtn.setOnClickListener({
             this.dismiss()

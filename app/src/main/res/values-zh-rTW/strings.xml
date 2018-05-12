@@ -6,6 +6,7 @@
     <string name="dict_dialog_hint">飛行系</string>
     <string name="dict_dialog_ok">OK</string>
     <string name="dict_dialog_cancel">結束</string>
+    <string name="dict_dialog_update">更新</string>
     <string name="no_result">無結果，可在 APP 中嘗試更新資料庫後再試試看。</string>
 
     <!-- about page related -->

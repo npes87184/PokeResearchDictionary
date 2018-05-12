@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.npes87184.pokeresearchdictionary.Fragment.ResearchListFragment
 import com.npes87184.pokeresearchdictionary.Fragment.UpdateFragment
+import com.npes87184.pokeresearchdictionary.Utils.Keys
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -26,10 +27,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
+        val startFragmentId = intent.getIntExtra(Keys.KEY_START_FRAGMENT, R.id.nav_all_list)
+
         val fm = fragmentManager
         val ft = fm.beginTransaction()
-        ft.replace(R.id.container, ResearchListFragment.newInstance())
-        ft.commit()
+        when (startFragmentId) {
+            R.id.nav_all_list -> {
+                ft.replace(R.id.container, ResearchListFragment.newInstance())
+                ft.commit()
+            }
+            R.id.nav_update -> {
+                ft.replace(R.id.container, UpdateFragment.newInstance())
+                ft.commit()
+            }
+            else -> {
+                ft.replace(R.id.container, ResearchListFragment.newInstance())
+                ft.commit()
+            }
+        }
     }
 
     override fun onBackPressed() {

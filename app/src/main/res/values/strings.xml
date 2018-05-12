@@ -7,6 +7,7 @@
     <string name="dict_dialog_hint">Flying type</string>
     <string name="dict_dialog_ok">OK</string>
     <string name="dict_dialog_cancel">End</string>
+    <string name="dict_dialog_update">Update</string>
     <string name="no_result">No result, you can update database in app and try again.</string>
 
     <!-- about page related -->
