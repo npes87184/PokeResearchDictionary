@@ -33,10 +33,10 @@ class ResearchListFragment : Fragment() {
         textView.movementMethod = ScrollingMovementMethod()
 
         fab.setOnClickListener { _ ->
-            if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_DARK) == Keys.KEY_PREF_THEME_DARK) {
-                DictDialog(context, R.style.AppThemeDark_Dialog).show()
-            } else {
+            if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_LIGHT) == Keys.KEY_PREF_THEME_LIGHT) {
                 DictDialog(context, R.style.AppThemeLight_Dialog).show()
+            } else {
+                DictDialog(context, R.style.AppThemeDark_Dialog).show()
             }
         }
 

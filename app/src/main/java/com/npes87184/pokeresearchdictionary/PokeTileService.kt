@@ -8,10 +8,10 @@ class PokeTileService : TileService() {
     override fun onClick() {
         super.onClick()
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_DARK) == Keys.KEY_PREF_THEME_DARK) {
-            showDialog(DictDialog(this, R.style.AppThemeDark_Dialog))
-        } else {
+        if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_LIGHT) == Keys.KEY_PREF_THEME_LIGHT) {
             showDialog(DictDialog(this, R.style.AppThemeLight_Dialog))
+        } else {
+            showDialog(DictDialog(this, R.style.AppThemeDark_Dialog))
         }
     }
 }

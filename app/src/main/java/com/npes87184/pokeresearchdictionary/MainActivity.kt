@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_DARK) == Keys.KEY_PREF_THEME_DARK) {
-            setTheme(R.style.AppThemeDark)
-        } else {
+        if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_LIGHT) == Keys.KEY_PREF_THEME_LIGHT) {
             setTheme(R.style.AppThemeLight)
+        } else {
+            setTheme(R.style.AppThemeDark)
         }
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
