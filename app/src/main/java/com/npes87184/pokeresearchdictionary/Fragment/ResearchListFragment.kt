@@ -2,6 +2,7 @@ package com.npes87184.pokeresearchdictionary.Fragment
 
 import android.os.Bundle
 import android.app.Fragment
+import android.preference.PreferenceManager
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.R
 import android.support.design.widget.FloatingActionButton
 import com.npes87184.pokeresearchdictionary.DictDialog
+import com.npes87184.pokeresearchdictionary.Utils.Keys
 import com.npes87184.pokeresearchdictionary.Utils.initDict
 
 class ResearchListFragment : Fragment() {
@@ -21,6 +23,7 @@ class ResearchListFragment : Fragment() {
         val fab = v.findViewById(R.id.fab) as FloatingActionButton
         var str = getString(R.string.all_rules)
         val dict = initDict(context)
+        val prefs = PreferenceManager.getDefaultSharedPreferences(activity)
 
         str = "$str\n\n"
         for (p in dict.jsDict?.data!!.iterator()) {
@@ -30,7 +33,11 @@ class ResearchListFragment : Fragment() {
         textView.movementMethod = ScrollingMovementMethod()
 
         fab.setOnClickListener { _ ->
-            DictDialog(context).show()
+            if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_DARK) == Keys.KEY_PREF_THEME_DARK) {
+                DictDialog(context, R.style.AppThemeDark_Dialog).show()
+            } else {
+                DictDialog(context, R.style.AppThemeLight_Dialog).show()
+            }
         }
 
         return v

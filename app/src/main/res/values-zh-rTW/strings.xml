@@ -20,6 +20,7 @@
 
     <!-- Navigation related -->
     <string name="list">所有列表</string>
+    <string name="setting">設定</string>
     <string name="about">關於</string>
     <string name="share">分享</string>
 
@@ -32,5 +33,7 @@
     <string name="no_network">無網路</string>
     <string name="updated">已更新資料庫！</string>
 
+    <!-- Preference fragment related -->
+    <string name="pref_theme">主題</string>
 
 </resources>

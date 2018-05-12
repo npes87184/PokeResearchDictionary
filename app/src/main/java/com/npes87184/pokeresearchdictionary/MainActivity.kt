@@ -2,6 +2,7 @@ package com.npes87184.pokeresearchdictionary
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -18,6 +19,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        if (prefs.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_DARK) == Keys.KEY_PREF_THEME_DARK) {
+            setTheme(R.style.AppThemeDark)
+        } else {
+            setTheme(R.style.AppThemeLight)
+        }
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
@@ -33,17 +40,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val fm = fragmentManager
         val ft = fm.beginTransaction()
         when (startFragmentId) {
-            R.id.nav_all_list -> {
-                ft.replace(R.id.container, ResearchListFragment.newInstance())
-                ft.commit()
-            }
             R.id.nav_update -> {
                 ft.replace(R.id.container, UpdateFragment.newInstance())
-                ft.commit()
+                ft.commitNow()
+            }
+            R.id.nav_setting -> {
+                ft.replace(R.id.container, SettingFragment.newInstance())
+                ft.commitNow()
             }
             else -> {
                 ft.replace(R.id.container, ResearchListFragment.newInstance())
-                ft.commit()
+                ft.commitNow()
             }
         }
     }

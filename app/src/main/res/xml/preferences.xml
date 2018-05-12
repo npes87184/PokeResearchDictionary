@@ -1,9 +1,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference
-        android:key="checkbox_preference"
-        android:title="@string/pref_auto_update"
-        android:summary="@string/pref_auto_update_desc" />
+    <ListPreference
+        android:key="pref_theme"
+        android:title="@string/pref_theme"
+        android:entries="@array/entry_theme"
+        android:entryValues="@array/value_theme"
+        android:dialogTitle="@string/pref_theme" />
 
 </PreferenceScreen>

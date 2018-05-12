@@ -11,11 +11,12 @@ import android.widget.EditText
 import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.Utils.initDict
 import android.content.Intent
+import android.content.res.Resources
 import android.view.View
 import com.npes87184.pokeresearchdictionary.Utils.Keys
 
 
-class DictDialog(context: Context) : Dialog(context, R.style.AppTheme_Dialog) {
+class DictDialog(context: Context, theme: Int) : Dialog(context, theme) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dict_dialog_layout)
