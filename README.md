@@ -59,6 +59,9 @@ Thats it!
 
 You can follow [this commit](https://github.com/npes87184/PokeResearchDictionary/commit/6f09721c5ce599a9e49b884dbcf157ec60916321) for more information.
 
+## Update dictionary
+Directly edit the json in `PokeResearchDictionary/app/src/main/assets/data/`. After your PR is merged, user can update dictionary directly from app.
+
 ## Other great work
 
 You can do everything you want and send a PR or help us fix [issues](https://github.com/npes87184/PokeResearchDictionary/issues). Any help is welcome.
