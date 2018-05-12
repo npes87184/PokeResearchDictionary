@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.Utils.initDict
-import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
 import android.view.View
 import com.npes87184.pokeresearchdictionary.Utils.Keys
