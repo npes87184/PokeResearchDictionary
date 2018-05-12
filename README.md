@@ -6,15 +6,27 @@ This app uses the quick setting tile api from android version 7 to create a quic
 
 Note: Only support Traditional Chinese and English now.
 
+# Features
+* Quickly start from tile.
+* Instantly filter the database and display the results when the input ends.
+* No login, no internet connection, you can check it at any time.
+* Support online update database.
+* Does not require unreasonable permission, light and small without advertising.
+* Open source
+
 # Pictures
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/1.png" width="450">
 
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.1.1
+* 1.2.0
 
 # Changelog
+## 1.2.0
+* Add theme support
+* Add update button in DictDialog
+
 ## 1.1.1
 * Add enu support.
 * Update internal database.
@@ -25,6 +37,31 @@ Note: Only support Traditional Chinese and English now.
 
 ## 1.0.0
 * Initial release
+
+# Contributions
+## Add dictionary of your own language
+
+1. Add your dictionary in `PokeResearchDictionary/app/src/main/assets/data/XXX.json`, you can take enu.json as reference.
+2. Add dict.kt in `PokeResearchDictionary/app/src/main/java/com/npes87184/pokeresearchdictionary/Dict/XXXDict.kt` in this file
+it should look like this:
+```
+package com.npes87184.pokeresearchdictionary.Dict
+
+class XXXDict : BaseDict() {
+    override var strDictFileName: String = "XXX.json"
+
+    init {
+    }
+}
+```
+3. Edit `PokeResearchDictionary/app/src/main/java/com/npes87184/pokeresearchdictionary/Utils/Utils.kt` to support your dictionary.
+Thats it!
+
+You can follow [this commit](https://github.com/npes87184/PokeResearchDictionary/commit/6f09721c5ce599a9e49b884dbcf157ec60916321) for more information.
+
+## Other great work
+
+You can do everything you want and send a PR or help us fix [issues](https://github.com/npes87184/PokeResearchDictionary/issues). Any help is welcome.
 
 # Thanks
 * [Roundicons Freebies](https://www.flaticon.com/authors/roundicons-freebies) for icon
