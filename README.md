@@ -6,6 +6,8 @@ This app uses the quick setting tile api from android version 7 to create a quic
 
 Note: Only support Traditional Chinese and English now.
 
+[![Get it on Google Play](http://www.android.com/images/brand/get_it_on_play_logo_small.png)](https://play.google.com/store/apps/details?id=com.npes87184.pokeresearchdictionary)
+
 # Features
 * Quickly start from tile.
 * Instantly filter the database and display the results when the input ends.
