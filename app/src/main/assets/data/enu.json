@@ -1,5 +1,5 @@
 {
-	"version": 1525485772,
+	"version": 1527043186,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -43,7 +43,7 @@
 		{"key": "Make 3 Great Curveball throws in a row", "value": "Onix"},
 		{"key": "Make 3 Great throws in a row", "value": "Onix"},
 		{"key": "Make 3 Great throws", "value": "Gastly / Onix"},
-		{"key": "Make 3 Nice Curvball Throws in a row", "value": "Ekans"},
+		{"key": "Make 3 Nice Curvball Throws in a row", "value": "Electrode"},
 		{"key": "Make 3 Nice throws", "value": "Voltorb"},
 		{"key": "Make 5 Great throws in a row", "value": "Flaafy"},
 		{"key": "Make 5 Nice throws", "value": "Voltorb"},
