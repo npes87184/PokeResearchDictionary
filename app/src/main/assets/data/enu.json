@@ -1,5 +1,5 @@
 {
-	"version": 1527043186,
+	"version": 1527232005,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -52,6 +52,10 @@
 		{"key": "Power up a Pokemon", "value": "Plusle"},
 		{"key": "Spin 3 PokeStops you haven't visited before", "value": "Ponyta"},
 		{"key": "Spin 6 PokeStops you haven't visited before", "value": "Aerodactyl"},
-		{"key": "Use a Super Effective Charged attack in 7 Gym battles", "value": "Electabuzz"}
+		{"key": "Use a Super Effective Charged attack in 7 Gym battles", "value": "Electabuzz"},
+		{"key": "Adventurous Event: Hatch 3 Eggs", "value": "Omanyte"},
+		{"key": "Adventurous Event: Evolve a Kabuto or Omanyte", "value": "Aerodactyl"},
+		{"key": "Adventurous Event: Spin 2 PokeStops you haven't visited before", "value": "Onix"},
+		{"key": "Adventurous Event: Earn three Candys walking with your buddy", "value": "Kabuto"}
 	]
 }
