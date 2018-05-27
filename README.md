@@ -22,9 +22,12 @@ Note: Only support Traditional Chinese and English now.
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.2.0
+* 1.2.1
 
 # Changelog
+## 1.2.1
+* Add an option for setting dictionary language
+
 ## 1.2.0
 * Add theme support
 * Add update button in DictDialog
