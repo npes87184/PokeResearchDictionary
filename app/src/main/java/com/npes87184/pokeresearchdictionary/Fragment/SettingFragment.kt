@@ -12,6 +12,7 @@ import android.content.Intent
 class SettingFragment : PreferenceFragment(), SharedPreferences.OnSharedPreferenceChangeListener {
     private var prefs : SharedPreferences? = null
     private var themePref : Preference? = null
+    private var dictLanguagePref : Preference? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +27,20 @@ class SettingFragment : PreferenceFragment(), SharedPreferences.OnSharedPreferen
         } else {
             themePref!!.summary = "Material Dark"
         }
+
+        dictLanguagePref = findPreference(Keys.KEY_PREF_DICT_LANGUAGE)
+        when (prefs!!.getString(Keys.KEY_PREF_DICT_LANGUAGE, Keys.KEY_PREF_DICT_LANGUAGE_DEFAULT)) {
+            Keys.KEY_PREF_DICT_LANGUAGE_DEFAULT -> dictLanguagePref!!.summary = getString(R.string.pref_system_default)
+            Keys.KEY_PREF_DICT_LANGUAGE_ZH_TW -> dictLanguagePref!!.summary = getString(R.string.pref_dict_language_cht)
+            else -> dictLanguagePref!!.summary = getString(R.string.pref_dict_language_enu)
+        }
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (!isAdded) {
+            /* Prevent fragment not attached to activity after restartActivity() */
+            return
+        }
         when (key) {
             Keys.KEY_PREF_THEME -> {
                 if (prefs!!.getString(Keys.KEY_PREF_THEME, Keys.KEY_PREF_THEME_LIGHT) == Keys.KEY_PREF_THEME_LIGHT) {
@@ -36,10 +48,14 @@ class SettingFragment : PreferenceFragment(), SharedPreferences.OnSharedPreferen
                 } else {
                     themePref!!.summary = "Material Dark"
                 }
-                if (!isAdded) {
-                    return
-                }
                 restartActivity()
+            }
+            Keys.KEY_PREF_DICT_LANGUAGE -> {
+                when (prefs!!.getString(Keys.KEY_PREF_DICT_LANGUAGE, Keys.KEY_PREF_DICT_LANGUAGE_DEFAULT)) {
+                    Keys.KEY_PREF_DICT_LANGUAGE_DEFAULT -> dictLanguagePref!!.summary = getString(R.string.pref_system_default)
+                    Keys.KEY_PREF_DICT_LANGUAGE_ZH_TW -> dictLanguagePref!!.summary = getString(R.string.pref_dict_language_cht)
+                    else -> dictLanguagePref!!.summary = getString(R.string.pref_dict_language_enu)
+                }
             }
         }
     }

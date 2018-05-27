@@ -8,4 +8,11 @@
         android:entryValues="@array/value_theme"
         android:dialogTitle="@string/pref_theme" />
 
+    <ListPreference
+        android:key="dict_language"
+        android:title="@string/pref_dict_language"
+        android:entries="@array/entry_dict_language"
+        android:entryValues="@array/value_dict_language"
+        android:dialogTitle="@string/pref_dict_language" />
+
 </PreferenceScreen>

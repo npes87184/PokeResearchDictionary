@@ -35,5 +35,7 @@
 
     <!-- Preference fragment related -->
     <string name="pref_theme">主題</string>
+    <string name="pref_dict_language">字典語言</string>
+    <string name="pref_system_default">系統預設</string>
 
 </resources>
