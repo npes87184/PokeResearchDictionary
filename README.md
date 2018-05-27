@@ -56,10 +56,13 @@ class XXXDict : BaseDict() {
     }
 }
 ```
-3. Edit `PokeResearchDictionary/app/src/main/java/com/npes87184/pokeresearchdictionary/Utils/Utils.kt` to support your dictionary.
-Thats it!
+3. Edit `app/src/main/res/values/arrays.xml` and `app/src/main/res/values/strings.xml` to support setting dictionary language.
 
-You can follow [this commit](https://github.com/npes87184/PokeResearchDictionary/commit/6f09721c5ce599a9e49b884dbcf157ec60916321) for more information.
+4. Edit `PokeResearchDictionary/app/src/main/java/com/npes87184/pokeresearchdictionary/Utils/Utils.kt` to support your dictionary.
+
+**Thats it!**
+
+You can follow [this commit](https://github.com/npes87184/PokeResearchDictionary/commit/6f09721c5ce599a9e49b884dbcf157ec60916321) and [this commit](https://github.com/npes87184/PokeResearchDictionary/commit/10c8d762a97f0b9c41d38fa9468915764ec8747a) for more information.
 
 ## Update dictionary
 Directly edit the json in `PokeResearchDictionary/app/src/main/assets/data/`. After your PR is merged, user can update dictionary directly from app.
