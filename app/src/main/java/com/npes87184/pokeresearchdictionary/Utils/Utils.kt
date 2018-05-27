@@ -13,11 +13,11 @@ fun initDict(context: Context): BaseDict {
     val strLang = locale.language + "-" + locale.country
     var retDict: BaseDict? = null
 
-    if (strLang.equals("zh-TW") || strLang.equals("zh-HK")) {
-        retDict = ChtDict()
+    retDict = if (strLang == "zh-TW" || strLang == "zh-HK") {
+        ChtDict()
     } else {
         /* If we don't know which dict should use, use Enu. */
-        retDict = EnuDict()
+        EnuDict()
     }
     retDict?.setUp(context)
 
