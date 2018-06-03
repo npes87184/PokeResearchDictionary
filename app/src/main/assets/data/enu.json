@@ -1,5 +1,5 @@
 {
-	"version": 1527232005,
+	"version": 1527995856,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -40,6 +40,7 @@
 		{"key": "Hatch an Egg", "value": "Exeggcute"},
 		{"key": "Make 3 Excellent throws in a row", "value": "Onix / Larvitar"},
 		{"key": "Make 3 Excellent throws", "value": "Larvitar"},
+		{"key": "Make 1 Excellent Curveball throws", "value": "Absol"},
 		{"key": "Make 3 Great Curveball throws in a row", "value": "Onix"},
 		{"key": "Make 3 Great throws in a row", "value": "Onix"},
 		{"key": "Make 3 Great throws", "value": "Gastly / Onix"},
