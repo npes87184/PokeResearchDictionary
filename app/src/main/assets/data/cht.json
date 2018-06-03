@@ -1,5 +1,5 @@
 {
-	"version": 1527411182,
+	"version": 1527995856,
 	"data": [
 		{"key": "參加1次道館對戰", "value": "猴怪/戴魯比/小火龍/蚊香蝌蚪/妙蛙種子/負電拍拍"},
 		{"key": "參加3次道館對戰", "value": "迷唇姐"},
@@ -40,6 +40,7 @@
 		{"key": "擲出3顆Nice球", "value": "雷電球"},
 		{"key": "擲出5顆Nice球", "value": "雷電球"},
 		{"key": "擲出3顆Great球", "value": "鬼斯/大岩蛇"},
+		{"key": "擲出1顆Excellent球", "value": "阿勃梭魯"},
 		{"key": "擲出3顆Excellent球", "value": "幼基拉斯"},
 		{"key": "連續擲出3顆Nice曲球", "value": "頑皮雷彈"},
 		{"key": "連續擲出3顆Great球", "value": "大岩蛇"},
