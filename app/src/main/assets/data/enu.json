@@ -1,5 +1,5 @@
 {
-	"version": 1528422664,
+	"version": 1528460677,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -17,6 +17,7 @@
 		{"key": "Catch a Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch 3 Dark-type Pokemon", "value": "Houndour"},
 		{"key": "Catch 3 Fairy-type Pokemon", "value": "Wigglytuff"},
+		{"key": "Catch 2 Water-type Pokemon", "value": "Magikarp"},
 		{"key": "Catch 3 Electric, Water, or Bug-type Pokemon", "value": "Electrike"},
 		{"key": "Catch 3 Electric-type Pokemon", "value": "Pikachu"},
 		{"key": "Catch 3 Fire-type Pokemon", "value": "Ponyta / Magcargo"},
