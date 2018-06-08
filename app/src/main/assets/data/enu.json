@@ -1,5 +1,5 @@
 {
-	"version": 1528027819,
+	"version": 1528422664,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -52,6 +52,7 @@
 		{"key": "Make 3 Curvball Throws in a row", "value": "Golduck"},
 		{"key": "Power up a Pokemon 5 times", "value": "Bulbasaur / Charmander / Squirtle"},
 		{"key": "Power up a Pokemon 7 times", "value": "Magneton"},
+		{"key": "Power up a Pokemon 3 times", "value": "Staryu"},
 		{"key": "Power up a Pokemon", "value": "Plusle"},
 		{"key": "Spin 3 PokeStops you haven't visited before", "value": "Ponyta"},
 		{"key": "Spin 6 PokeStops you haven't visited before", "value": "Aerodactyl"},
