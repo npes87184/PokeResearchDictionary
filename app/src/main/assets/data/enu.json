@@ -1,5 +1,5 @@
 {
-	"version": 1528682948,
+	"version": 1529219225,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -13,6 +13,7 @@
 		{"key": "Catch 3 Pidgey or Murkrow", "value": "Ekans"},
 		{"key": "Catch 3 Treecko or Mudkip", "value": "Torchic"},
 		{"key": "Catch 3 Meowth or Skitty", "value": "Growlithe"},
+		{"key": "Catch 5 Magikarp or Wailmer", "value": "Luvdisc"},
 		{"key": "Catch 3 Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch a Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch 3 Dark-type Pokemon", "value": "Houndour"},
@@ -37,6 +38,7 @@
 		{"key": "Evolve 3 Electric-type Pokemon", "value": "Jolteon"},
 		{"key": "Evolve a Pokemon", "value": "Vulpix / Eevee"},
 		{"key": "Evolve a Water-type Pokemon", "value": "Seel"},
+		{"key": "Evolve 2 Shellder", "value": "Lapras"},
 		{"key": "Hatch 5 Eggs", "value": "Chansey"},
 		{"key": "Hatch 3 Eggs", "value": "Magmar"},
 		{"key": "Hatch an Egg", "value": "Exeggcute / Shellder"},
