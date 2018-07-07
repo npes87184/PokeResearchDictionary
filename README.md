@@ -6,7 +6,9 @@ This app uses the quick setting tile api from android version 7 to create a quic
 
 Note: Only support Traditional Chinese and English now.
 
-[![Get it on Google Play](http://www.android.com/images/brand/get_it_on_play_logo_small.png)](https://play.google.com/store/apps/details?id=com.npes87184.pokeresearchdictionary)
+<a href="https://play.google.com/store/apps/details?id=com.npes87184.pokeresearchdictionary">
+    <img src="https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png" width="200">
+</a>
 
 # Features
 * Quickly start from tile.
@@ -22,9 +24,12 @@ Note: Only support Traditional Chinese and English now.
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.2.2
+* 1.2.3
 
 # Changelog
+## 1.2.3
+* Show changelog of dictionary when updated.
+
 ## 1.2.2
 * Update internal database.
 
