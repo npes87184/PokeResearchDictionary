@@ -28,7 +28,7 @@ class UpdateFragment : Fragment() {
         versionText.text = dict.getVersion()
         dict.update(versionText)
 
-        updateBtn.setOnClickListener(View.OnClickListener {
+        updateBtn.setOnClickListener({
             dict.update(versionText)
         })
 

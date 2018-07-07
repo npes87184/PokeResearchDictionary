@@ -14,6 +14,7 @@ import android.app.ProgressDialog
 import com.npes87184.pokeresearchdictionary.R
 import android.app.AlertDialog
 import android.widget.TextView
+import kotlin.collections.ArrayList
 
 fun timeStampToString(stampSecond: Long): String {
     val date = Date(stampSecond * 1000)
@@ -72,7 +73,7 @@ abstract class BaseDict {
     }
 
     fun update(textView: TextView) {
-        val updater : Updater = Updater(textView, strDictFileName, jsDict!!.version!!, this.context)
+        val updater = Updater(textView, strDictFileName, jsDict!!, this.context)
         updater.execute(strDictFileName)
     }
 
@@ -88,7 +89,7 @@ abstract class BaseDict {
     }
 }
 
-class Updater(private val textView: TextView, private val strFileName: String, private val currentVersion: Long, private val context: Context?) : AsyncTask<String, Void, String>() {
+class Updater(private val textView: TextView, private val strFileName: String, private val jsDictOld: DictJson, private val context: Context?) : AsyncTask<String, Void, String>() {
     private var progressDialog: ProgressDialog? = null
 
     override fun doInBackground(vararg params : String): String? {
@@ -114,20 +115,53 @@ class Updater(private val textView: TextView, private val strFileName: String, p
                 context!!.resources.getString(R.string.check_update), context.resources.getString(R.string.checking))
     }
 
+    private fun dictMinus(jsDictA: DictJson, jsDictB: DictJson): ArrayList<DictJson.Pair> {
+        var list: ArrayList<DictJson.Pair> = ArrayList()
+
+        for (pA in jsDictA?.data!!.iterator()) {
+            var blFind = false
+
+            for (pB in jsDictB?.data!!.iterator()) {
+                if (pA.key == pB.key) {
+                    blFind = true
+                    break
+                }
+            }
+
+            if (!blFind) {
+                list.add(pA)
+            }
+        }
+
+        return list
+    }
+
+    private fun dictListToString(list: ArrayList<DictJson.Pair>): String {
+        var strRet: String = String()
+
+        for (p in list) {
+            strRet = "$strRet* ${p.key}: ${p.value}\n"
+        }
+
+        return strRet
+    }
+
     override fun onPostExecute(result: String?) {
         super.onPostExecute(result)
-        progressDialog!!.dismiss()
         val dialog = AlertDialog.Builder(context)
         val gson = Gson()
         val jsDictRet = gson.fromJson(result, DictJson::class.java)
 
         if (result != null) {
-            if (jsDictRet.version!! > currentVersion) {
+            if (jsDictRet.version!! > jsDictOld.version!!) {
                 val fileJs = File(context!!.filesDir, strFileName)
                 fileJs.delete()
                 fileJs.writeText(result)
+                /* Set version text to the latest version */
                 textView.text = timeStampToString(jsDictRet.version!!)
-                dialog.setMessage(R.string.updated)
+                /* Get different entry */
+                var list = dictMinus(jsDictRet, jsDictOld)
+                dialog.setMessage(context.getString(R.string.updated) + dictListToString((list)))
             } else {
                 dialog.setMessage(R.string.current_is_latest)
             }
@@ -136,6 +170,7 @@ class Updater(private val textView: TextView, private val strFileName: String, p
             dialog.setMessage(R.string.no_network)
         }
         dialog.setPositiveButton(R.string.dict_dialog_ok, { _, _ -> })
+        progressDialog!!.dismiss()
         dialog.show()
     }
 }
