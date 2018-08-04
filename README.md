@@ -24,9 +24,12 @@ Note: Only support Traditional Chinese and English now.
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.2.3
+* 1.2.4
 
 # Changelog
+## 1.2.4
+* Show the correct changelog
+
 ## 1.2.3
 * Show changelog of dictionary when updated.
 
@@ -39,17 +42,6 @@ Note: Only support Traditional Chinese and English now.
 ## 1.2.0
 * Add theme support
 * Add update button in DictDialog
-
-## 1.1.1
-* Add enu support.
-* Update internal database.
-
-## 1.1.0
-* Dramatically improve the UI, we can start search dialog from app now.
-* Support online update database.
-
-## 1.0.0
-* Initial release
 
 # Contributions
 ## Add dictionary of your own language
