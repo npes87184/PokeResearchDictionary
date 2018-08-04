@@ -122,7 +122,7 @@ class Updater(private val textView: TextView, private val strFileName: String, p
             var blFind = false
 
             for (pB in jsDictB?.data!!.iterator()) {
-                if (pA.key == pB.key) {
+                if (pA.key == pB.key && pA.value == pB.value) {
                     blFind = true
                     break
                 }
