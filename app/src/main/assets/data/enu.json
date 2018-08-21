@@ -1,5 +1,5 @@
 {
-	"version": 1533179438,
+	"version": 1534816865,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -77,6 +77,11 @@
 		{"key": "Adventurous Event: Hatch 3 Eggs", "value": "Omanyte"},
 		{"key": "Adventurous Event: Evolve a Kabuto or Omanyte", "value": "Aerodactyl"},
 		{"key": "Adventurous Event: Spin 2 PokeStops you haven't visited before", "value": "Onix"},
-		{"key": "Adventurous Event: Earn three Candys walking with your buddy", "value": "Kabuto"}
+		{"key": "Adventurous Event: Earn three Candys walking with your buddy", "value": "Kabuto"},
+		{"key": "Johto Festival: Evolve 3 Sunkern or Natu", "value": "Pineco"},
+		{"key": "Johto Festival: Win a raid", "value": "Porygon"},
+		{"key": "Johto Festival: Make 4 Great Curveball throws in a row", "value": "Miltank"},
+		{"key": "Johto Festival: Make 3 Excellent throws", "value": "Onix / Scyther"},
+		{"key": "Johto Festival: Catch 5 Water-type Pokemon", "value": "Poliwhirl / Seadra"}
 	]
 }
