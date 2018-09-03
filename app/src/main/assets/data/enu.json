@@ -1,5 +1,5 @@
 {
-	"version": 1535857039,
+	"version": 1535977330,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -39,7 +39,7 @@
 		{"key": "Catch 20 Pokemon with Weather Boost", "value": "Ninetales"},
 		{"key": "Catch a Dragon-type Pokemon", "value": "Dratini"},
 		{"key": "Catch a Ditto", "value": "Tangela"},
-		{"key": "Earn a Candy walking with your buddy", "value": "Swablu"},
+		{"key": "Earn a Candy walking with your buddy", "value": "Swablu / Numel"},
 		{"key": "Evolve 5 Fire-type Pokemon", "value": "Flareon"},
 		{"key": "Evolve 3 Electric-type Pokemon", "value": "Jolteon"},
 		{"key": "Evolve a Pokemon", "value": "Vulpix / Eevee"},
