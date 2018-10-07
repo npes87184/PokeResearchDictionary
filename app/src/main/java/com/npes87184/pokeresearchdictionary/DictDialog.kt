@@ -11,7 +11,6 @@ import android.widget.EditText
 import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.Utils.initDict
 import android.content.Intent
-import android.content.res.Resources
 import android.view.View
 import com.npes87184.pokeresearchdictionary.Utils.Keys
 
@@ -56,6 +55,7 @@ class DictDialog(context: Context, theme: Int) : Dialog(context, theme) {
 
         updateBtn.setOnClickListener({
             val intent = Intent(context, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             intent.putExtra(Keys.KEY_START_FRAGMENT, R.id.nav_update)
             context.startActivity(intent)
 
