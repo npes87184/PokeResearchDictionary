@@ -1,5 +1,5 @@
 {
-	"version": 1538570857,
+	"version": 1538917045,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -18,6 +18,7 @@
 		{"key": "Catch a Meowth or Growlithe", "value": "Electrike"},
 		{"key": "Catch a Skitty or Poochyena", "value": "Snubbull"},
 		{"key": "Catch 5 Magikarp or Wailmer", "value": "Luvdisc"},
+		{"key": "Catch 5 Drowzee or Abra", "value": "Jynx"},
 		{"key": "Catch 3 Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch a Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch 3 Dark-type Pokemon", "value": "Houndour"},
