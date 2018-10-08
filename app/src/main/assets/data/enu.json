@@ -1,5 +1,5 @@
 {
-	"version": 1538917045,
+	"version": 1538964123,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -45,6 +45,7 @@
 		{"key": "Evolve 10 Water-type Pokemon", "value": "Dratini"},
 		{"key": "Evolve 5 Fire-type Pokemon", "value": "Flareon"},
 		{"key": "Evolve 3 Electric-type Pokemon", "value": "Jolteon"},
+		{"key": "Evolve 3 Slowpoke or Exeggcute", "value": "Girafarig"},
 		{"key": "Evolve a Pokemon", "value": "Vulpix / Eevee"},
 		{"key": "Evolve a Fire-type Pokemon", "value": "Charmander"},
 		{"key": "Evolve a Grass-type Pokemon", "value": "Bulbasaur"},
