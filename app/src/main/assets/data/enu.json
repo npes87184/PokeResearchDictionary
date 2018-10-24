@@ -1,5 +1,5 @@
 {
-	"version": 1538964123,
+	"version": 1540368984,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -19,6 +19,7 @@
 		{"key": "Catch a Skitty or Poochyena", "value": "Snubbull"},
 		{"key": "Catch 5 Magikarp or Wailmer", "value": "Luvdisc"},
 		{"key": "Catch 5 Drowzee or Abra", "value": "Jynx"},
+		{"key": "Catch 5 Poochyena or Houndour", "value": "Sneasel"},
 		{"key": "Catch 3 Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch a Bug-type Pokemon", "value": "Pinsir"},
 		{"key": "Catch 3 Dark-type Pokemon", "value": "Houndour"},
@@ -34,6 +35,7 @@
 		{"key": "Catch a Flying-type Pokemon", "value": "Doduo"},
 		{"key": "Catch 3 Flying-type Pokemon", "value": "Doduo"},
 		{"key": "Catch 5 Flying-type Pokemon", "value": "Gligar"},
+		{"key": "Catch 10 Ghost-type Pokemon", "value": "Sableye"},
 		{"key": "Catch a Normal-type Pokemon", "value": "Ekans"},
 		{"key": "Catch 3 Poison-type Pokemon", "value": "Grimer / Bulbasaur / Gastly"},
 		{"key": "Catch 5 Pokemon with Weather Boost", "value": "Poliwag / Vulpix"},
