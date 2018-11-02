@@ -24,9 +24,13 @@ Note: Only support Traditional Chinese and English now.
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.2.4
+* 1.2.5
 
 # Changelog
+## 1.2.5
+* Update internal database
+* Compatible with Android P
+
 ## 1.2.4
 * Show the correct changelog
 
