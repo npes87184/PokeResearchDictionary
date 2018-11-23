@@ -1,5 +1,5 @@
 {
-	"version": 1541163736,
+	"version": 1542938942,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
@@ -58,13 +58,15 @@
 		{"key": "Evolve a Electric-type, Fire-type or Grass-type Pokemon", "value": "Eevee"},
 		{"key": "Evolve 2 Shellder", "value": "Lapras"},
 		{"key": "Evolve 2 Pidgey", "value": "Caterpie"},
+		{"key": "Evolve 2 Anorith", "value": "Scyther"},
 		{"key": "Evolve a Meowth", "value": "Houndour"},
 		{"key": "Hatch 5 Eggs", "value": "Chansey"},
 		{"key": "Hatch 3 Eggs", "value": "Magmar"},
-		{"key": "Hatch 2 Eggs", "value": "Wailmer"},
+		{"key": "Hatch 2 Eggs", "value": "Wailmer / Aerodactyl"},
 		{"key": "Hatch an Egg", "value": "Exeggcute / Shellder / Lanturn"},
 		{"key": "Make 3 Excellent throws in a row", "value": "Onix / Larvitar"},
 		{"key": "Make 3 Excellent throws", "value": "Larvitar"},
+		{"key": "Make an Excellent throw", "value": "Ditto"},
 		{"key": "Make 1 Excellent Curveball throws", "value": "Absol"},
 		{"key": "Make 3 Great Curveball throws in a row", "value": "Onix"},
 		{"key": "Make 3 Great throws in a row", "value": "Onix"},
