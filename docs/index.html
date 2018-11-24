@@ -36,18 +36,21 @@
         <div class="row">
             <form class="col s12" action="https://formspree.io/npes87184@gmail.com" method="POST">
                 <div class="row">
+                    <input type="hidden" name="_subject" value="New research from PokeDict">
+                    <input type="text" name="_gotcha" style="display:none">
+                    <input type="hidden" name="_next" value="./PokeResearchDictionary/index.html?thanks" />
                     <div class="input-field col l8 s12">
                         <i class="material-icons prefix">stars</i>
-                        <input id="research" type="text" class="validate">
+                        <input id="research" type="text" class="validate" name="research">
                         <label for="research">Research</label>
                     </div>
                     <div class="input-field col l4 s12">
                         <i class="material-icons prefix">redeem</i>
-                        <input id="reward" type="text" class="validate">
+                        <input id="reward" type="text" class="validate" name="reward">
                         <label for="reward">Reward</label>
                     </div>
                 </div>
-                <button class="btn center waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn center waves-effect waves-light" type="submit">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>
@@ -56,14 +59,36 @@
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         // setup sidebar
         $(document).ready(function(){
             $('.sidenav').sidenav();
         });
+
+        // show thank you, when url contains thanks
+		var hasThanks = function hasThanks() {
+			var sPageURL = window.location.search.substring(1),
+				sURLVariables = sPageURL.split('&'),
+				sParameterName,
+				i;
+
+			for (i = 0; i < sURLVariables.length; i++) {
+				sParameterName = sURLVariables[i].split('=');
+
+				if (sParameterName[0] === 'thanks') {
+					return true;
+				}
+			}
+            return undefined;
+		};
+
+        if (hasThanks()) {
+            M.toast({html: 'Thank you for your contribution, I will update it as soon as possible!',
+                     classes: 'rounded'});
+        }
     </script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
