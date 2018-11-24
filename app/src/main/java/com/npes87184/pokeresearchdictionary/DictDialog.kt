@@ -11,7 +11,6 @@ import android.widget.EditText
 import android.widget.TextView
 import com.npes87184.pokeresearchdictionary.Utils.initDict
 import android.content.Intent
-import android.view.View
 import com.npes87184.pokeresearchdictionary.Utils.Keys
 
 
@@ -36,10 +35,8 @@ class DictDialog(context: Context, theme: Int) : Dialog(context, theme) {
                     for ((k, v) in retMap) {
                         str = "$str* $k: $v\n"
                     }
-                    updateBtn.visibility = View.INVISIBLE
                 } else {
                     str = context.getString(R.string.no_result)
-                    updateBtn.visibility = View.VISIBLE
                 }
                 textView.text = str
             }
