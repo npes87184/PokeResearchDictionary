@@ -3,6 +3,8 @@
     <string name="author_name" translatable="false">npes87184</string>
     <string name="all_rules">All rules:</string>
 
+    <string name="donate_success">Thank you for your donation!</string>
+
     <!-- dict dialog related -->
     <string name="dict_dialog_hint">Flying type</string>
     <string name="dict_dialog_ok">OK</string>
@@ -27,6 +29,7 @@
     <string name="about">About</string>
     <string name="share">Share</string>
     <string name="report">Report research</string>
+    <string name="donate">Donate</string>
 
     <!-- Update fragment related -->
     <string name="current_version">Current version:</string>

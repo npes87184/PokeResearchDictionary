@@ -9,14 +9,18 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
+import android.widget.Toast
 import com.npes87184.pokeresearchdictionary.Fragment.ResearchListFragment
 import com.npes87184.pokeresearchdictionary.Fragment.SettingFragment
 import com.npes87184.pokeresearchdictionary.Fragment.UpdateFragment
+import com.npes87184.pokeresearchdictionary.Utils.BillingManager
 import com.npes87184.pokeresearchdictionary.Utils.Keys
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, BillingManager.BillingUpdatesListener {
+    var billingManager: BillingManager? = null
+    val DONATE_COFFEE_SKU_ID = "donation_coffee"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +58,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 ft.commitNow()
             }
         }
+
+        billingManager = BillingManager(this, this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        billingManager?.destroyBillingClient()
     }
 
     override fun onBackPressed() {
@@ -82,6 +93,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 urlIntent.data = Uri.parse("https://npes87184.github.io/PokeResearchDictionary/report.html")
                 startActivity(urlIntent)
             }
+            R.id.nav_donate -> {
+                billingManager?.launchPurchaseFlow(DONATE_COFFEE_SKU_ID)
+            }
             R.id.nav_setting -> {
                 ft.replace(R.id.container, SettingFragment.newInstance())
                 ft.commit()
@@ -102,5 +116,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onConsumeFinished(token: String, responseCode: Int) {
+        Toast.makeText(this, this.getString(R.string.donate_success), Toast.LENGTH_LONG).show()
     }
 }
