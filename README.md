@@ -10,6 +10,8 @@ Note: Only support Traditional Chinese and English now.
     <img src="https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png" width="200">
 </a>
 
+It also has a web interface for reporting and listing research: [PokeResearchDictionary](https://npes87184.github.io/PokeResearchDictionary/list.html)
+
 # Features
 * Quickly start from tile.
 * Instantly filter the database and display the results when the input ends.
@@ -24,9 +26,14 @@ Note: Only support Traditional Chinese and English now.
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.2.5
+* 1.3.1
 
 # Changelog
+## 1.3.1
+* Support reporting research
+* Always show update button
+* Add donation button
+
 ## 1.2.5
 * Update internal database
 * Compatible with Android P
