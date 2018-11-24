@@ -23,6 +23,7 @@
     <string name="setting">設定</string>
     <string name="about">關於</string>
     <string name="share">分享</string>
+    <string name="report">回報任務</string>
 
     <!-- Update fragment related -->
     <string name="current_version">目前版本：</string>

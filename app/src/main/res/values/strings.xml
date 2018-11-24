@@ -26,6 +26,7 @@
     <string name="setting">Setting</string>
     <string name="about">About</string>
     <string name="share">Share</string>
+    <string name="report">Report research</string>
 
     <!-- Update fragment related -->
     <string name="current_version">Current version:</string>

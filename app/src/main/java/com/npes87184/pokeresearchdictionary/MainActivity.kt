@@ -1,6 +1,7 @@
 package com.npes87184.pokeresearchdictionary
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.NavigationView
@@ -75,6 +76,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_update -> {
                 ft.replace(R.id.container, UpdateFragment.newInstance())
                 ft.commit()
+            }
+            R.id.nav_report -> {
+                val urlIntent = Intent(android.content.Intent.ACTION_VIEW)
+                urlIntent.data = Uri.parse("https://npes87184.github.io/PokeResearchDictionary/report.html")
+                startActivity(urlIntent)
             }
             R.id.nav_setting -> {
                 ft.replace(R.id.container, SettingFragment.newInstance())
