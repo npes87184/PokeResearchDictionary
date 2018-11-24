@@ -14,7 +14,7 @@
         <nav>
             <div class="nav-wrapper teal lighten-2">
                 <a href="https://github.com/npes87184/PokeResearchDictionary" class="brand-logo">PokeResearchDictionary</a>
-                <a href="#" data-target="mobile-sidebar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" data-target="mobile-dropdown" class="dropdown-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
                     <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
@@ -22,7 +22,7 @@
             </div>
         </nav>
     </div>
-    <ul class="sidenav" id="mobile-sidebar">
+    <ul class="dropdown-content" id="mobile-dropdown">
         <li><a href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
         <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
     </ul>
@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h3>PokeResearchDictionary</h3>
+                <h3>PokeDict</h3>
                 <p>Search the Pokemon Go research reward quickly from tile.</p>
             </div>
         </div>
@@ -56,9 +56,11 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <script>
-        // setup sidebar
+        // setup navbar
         $(document).ready(function(){
-            $('.sidenav').sidenav();
+            $('.dropdown-trigger').dropdown({
+                coverTrigger: false
+            });
         });
 
         // load dictionary
