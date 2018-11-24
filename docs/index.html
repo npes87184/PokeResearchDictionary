@@ -12,7 +12,8 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper teal lighten-2">
-                <a href="https://raw.githubusercontent.com/npes87184/PokeResearchDictionary/master/app/src/main/res/drawable/app_icon.png" class="brand-logo" style="margin-left:10px;">PokeResearchDictionary</a>
+                <a href="https://github.com/npes87184/PokeResearchDictionary" class="brand-logo">PokeResearchDictionary</a>
+                <a href="#" data-target="mobile-sidebar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="index.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
                     <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
@@ -20,6 +21,11 @@
             </div>
         </nav>
     </div>
+    <ul class="sidenav" id="mobile-sidebar">
+        <li><a href="index.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
+        <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
+    </ul>
+
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -30,16 +36,18 @@
         <div class="row">
             <form class="col s12" action="https://formspree.io/npes87184@gmail.com" method="POST">
                 <div class="row">
-                    <div class="input-field col s8">
+                    <div class="input-field col l8 s12">
+                        <i class="material-icons prefix">stars</i>
                         <input id="research" type="text" class="validate">
                         <label for="research">Research</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col l4 s12">
+                        <i class="material-icons prefix">redeem</i>
                         <input id="reward" type="text" class="validate">
                         <label for="reward">Reward</label>
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <button class="btn center waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                 </button>
             </form>
@@ -48,6 +56,12 @@
 
 	<!--Import jQuery before materialize.js-->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        // setup sidebar
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

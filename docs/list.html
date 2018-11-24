@@ -12,7 +12,8 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper teal lighten-2">
-                <a href="https://raw.githubusercontent.com/npes87184/PokeResearchDictionary/master/app/src/main/res/drawable/app_icon.png" class="brand-logo" style="margin-left:10px;">PokeResearchDictionary</a>
+                <a href="https://github.com/npes87184/PokeResearchDictionary" class="brand-logo">PokeResearchDictionary</a>
+                <a href="#" data-target="mobile-sidebar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="index.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
                     <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
@@ -20,6 +21,11 @@
             </div>
         </nav>
     </div>
+    <ul class="sidenav" id="mobile-sidebar">
+        <li><a href="index.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
+        <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
+    </ul>
+
     <div class="container">
         <div class="row">
             <div class="col s12">
@@ -49,6 +55,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <script>
+        // setup sidebar
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+
+        // load dictionary
         var userLang = navigator.language || navigator.userLanguage;
         var jsonFileName = "enu.json";
         if (userLang === "zh-TW") {
