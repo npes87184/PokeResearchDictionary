@@ -1,7 +1,6 @@
 package com.npes87184.pokeresearchdictionary.Dict
 
 import android.content.Context
-import android.net.ConnectivityManager
 import android.os.AsyncTask
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -13,20 +12,9 @@ import java.util.*
 import android.app.ProgressDialog
 import com.npes87184.pokeresearchdictionary.R
 import android.app.AlertDialog
-import android.widget.TextView
+import android.view.View
+import com.npes87184.pokeresearchdictionary.Utils.timeStampToString
 import kotlin.collections.ArrayList
-
-fun timeStampToString(stampSecond: Long): String {
-    val date = Date(stampSecond * 1000)
-    val cal = Calendar.getInstance()
-    cal.time = date
-    val year = cal.get(Calendar.YEAR)
-    val month = cal.get(Calendar.MONTH)
-    val day = cal.get(Calendar.DAY_OF_MONTH)
-    val hour = cal.get(Calendar.HOUR_OF_DAY)
-    val minute = cal.get(Calendar.MINUTE)
-    return "$year/${month+1}/$day $hour:$minute"
-}
 
 abstract class BaseDict {
     abstract var strDictFileName : String
@@ -72,9 +60,14 @@ abstract class BaseDict {
         return timeStampToString(jsDict!!.version!!)
     }
 
-    fun update(textView: TextView) {
-        val updater = Updater(textView, strDictFileName, jsDict!!, this.context)
-        updater.execute(strDictFileName)
+    fun getListNum(): String {
+        return jsDict!!.data!!.size.toString()
+    }
+
+    fun fetch(listener: Fetcher.UpdaterListener) {
+        val fetcher = Fetcher()
+        fetcher.setListener(listener)
+        fetcher.execute(strDictFileName)
     }
 
     fun search(key : String) : MutableMap<String, String> {
@@ -89,88 +82,34 @@ abstract class BaseDict {
     }
 }
 
-class Updater(private val textView: TextView, private val strFileName: String, private val jsDictOld: DictJson, private val context: Context?) : AsyncTask<String, Void, String>() {
-    private var progressDialog: ProgressDialog? = null
+class Fetcher : AsyncTask<String, Void, String>() {
+    private var listener: UpdaterListener? = null
+
+    interface UpdaterListener {
+        fun onFetchFinished(strResult: String)
+    }
+
+    fun setListener(listener: UpdaterListener) {
+        this.listener = listener
+    }
 
     override fun doInBackground(vararg params : String): String? {
-        val cm = context!!.getSystemService(
-                Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetworkInfo = cm.activeNetworkInfo
-        if (activeNetworkInfo == null || !activeNetworkInfo.isConnectedOrConnecting) {
-            return null
-        }
         val strTarget = params[0]
         val client = OkHttpClient()
         val request = Request.Builder()
                 .url("https://raw.githubusercontent.com/npes87184/PokeResearchDictionary/master/app/src/main/assets/data/$strTarget")
                 .build()
 
-        val response = client.newCall(request).execute()
-        return response.body()?.string()
-    }
-
-    override fun onPreExecute() {
-        super.onPreExecute()
-        progressDialog = ProgressDialog.show(context,
-                context!!.resources.getString(R.string.check_update), context.resources.getString(R.string.checking))
-    }
-
-    private fun dictMinus(jsDictA: DictJson, jsDictB: DictJson): ArrayList<DictJson.Pair> {
-        var list: ArrayList<DictJson.Pair> = ArrayList()
-
-        for (pA in jsDictA?.data!!.iterator()) {
-            var blFind = false
-
-            for (pB in jsDictB?.data!!.iterator()) {
-                if (pA.key == pB.key && pA.value == pB.value) {
-                    blFind = true
-                    break
-                }
-            }
-
-            if (!blFind) {
-                list.add(pA)
-            }
+        return try {
+            val response = client.newCall(request).execute()
+            response.body()?.string()
+        } catch (e: Exception) {
+            ""
         }
-
-        return list
-    }
-
-    private fun dictListToString(list: ArrayList<DictJson.Pair>): String {
-        var strRet: String = String()
-
-        for (p in list) {
-            strRet = "$strRet* ${p.key}: ${p.value}\n"
-        }
-
-        return strRet
     }
 
     override fun onPostExecute(result: String?) {
         super.onPostExecute(result)
-        val dialog = AlertDialog.Builder(context)
-        val gson = Gson()
-        val jsDictRet = gson.fromJson(result, DictJson::class.java)
-
-        if (result != null) {
-            if (jsDictRet.version!! > jsDictOld.version!!) {
-                val fileJs = File(context!!.filesDir, strFileName)
-                fileJs.delete()
-                fileJs.writeText(result)
-                /* Set version text to the latest version */
-                textView.text = timeStampToString(jsDictRet.version!!)
-                /* Get different entry */
-                var list = dictMinus(jsDictRet, jsDictOld)
-                dialog.setMessage(context.getString(R.string.updated) + dictListToString((list)))
-            } else {
-                dialog.setMessage(R.string.current_is_latest)
-            }
-        } else {
-            /* no network */
-            dialog.setMessage(R.string.no_network)
-        }
-        dialog.setPositiveButton(R.string.dict_dialog_ok, { _, _ -> })
-        progressDialog!!.dismiss()
-        dialog.show()
+        this.listener!!.onFetchFinished(result!!)
     }
 }

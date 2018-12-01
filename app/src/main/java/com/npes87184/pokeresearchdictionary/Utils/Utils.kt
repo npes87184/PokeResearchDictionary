@@ -6,6 +6,7 @@ import android.preference.PreferenceManager
 import com.npes87184.pokeresearchdictionary.Dict.BaseDict
 import com.npes87184.pokeresearchdictionary.Dict.ChtDict
 import com.npes87184.pokeresearchdictionary.Dict.EnuDict
+import java.util.*
 
 
 fun initDict(context: Context): BaseDict {
@@ -29,4 +30,16 @@ fun initDict(context: Context): BaseDict {
     retDict?.setUp(context)
 
     return retDict!!
+}
+
+fun timeStampToString(stampSecond: Long): String {
+    val date = Date(stampSecond * 1000)
+    val cal = Calendar.getInstance()
+    cal.time = date
+    val year = cal.get(Calendar.YEAR)
+    val month = cal.get(Calendar.MONTH)
+    val day = cal.get(Calendar.DAY_OF_MONTH)
+    val hour = cal.get(Calendar.HOUR_OF_DAY)
+    val minute = cal.get(Calendar.MINUTE)
+    return "$year/${month+1}/$day $hour:$minute"
 }

@@ -33,9 +33,10 @@
     <string name="update">更新資料庫</string>
     <string name="check_update">檢查更新</string>
     <string name="checking">檢查中\u2026</string>
-    <string name="current_is_latest">目前資料庫已是最新版。</string>
     <string name="no_network">無網路</string>
+    <string name="you_are_up_to_date">最新資料庫</string>
     <string name="updated">已更新資料庫！\n\n新增：\n\n</string>
+    <string name="list_num">列表數量：</string>
 
     <!-- Preference fragment related -->
     <string name="pref_theme">主題</string>
