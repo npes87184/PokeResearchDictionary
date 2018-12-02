@@ -2,7 +2,7 @@
     <string name="app_name">寶可夢田野字典</string>
     <string name="all_rules">所有列表:</string>
 
-    <string name="donate_success">感謝捐助！</string>
+    <string name="donate_success">感謝贊助！</string>
 
     <!-- dict dialog related -->
     <string name="dict_dialog_hint">飛行屬性</string>
@@ -26,7 +26,9 @@
     <string name="about">關於</string>
     <string name="share">分享</string>
     <string name="report">回報任務</string>
-    <string name="donate">捐贈</string>
+    <string name="report_desc">一同幫助全世界的訓練師！</string>
+    <string name="donate">贊助開發</string>
+    <string name="donate_desc">提供此服務繼續運轉的能量！</string>
 
     <!-- Update fragment related -->
     <string name="current_version">目前版本：</string>

@@ -29,7 +29,9 @@
     <string name="about">About</string>
     <string name="share">Share</string>
     <string name="report">Report research</string>
+    <string name="report_desc">Help trainers in the world!</string>
     <string name="donate">Donate</string>
+    <string name="donate_desc">Give power for continuously maintaining this service.</string>
 
     <!-- Update fragment related -->
     <string name="current_version">Current version:</string>

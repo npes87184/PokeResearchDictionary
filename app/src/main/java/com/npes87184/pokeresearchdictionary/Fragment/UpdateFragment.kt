@@ -5,7 +5,9 @@ import android.app.AlertDialog
 import android.app.Fragment
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,7 @@ import com.google.gson.Gson
 import com.npes87184.pokeresearchdictionary.Dict.BaseDict
 import com.npes87184.pokeresearchdictionary.Dict.DictJson
 import com.npes87184.pokeresearchdictionary.Dict.Fetcher
+import com.npes87184.pokeresearchdictionary.MainActivity
 import com.npes87184.pokeresearchdictionary.R
 import com.npes87184.pokeresearchdictionary.Utils.initDict
 import com.npes87184.pokeresearchdictionary.Utils.timeStampToString
@@ -42,6 +45,10 @@ class UpdateFragment : Fragment(), Fetcher.UpdaterListener {
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_update, container, false)
         val linearLayoutUpdate = v.findViewById(R.id.linearLayoutUpdate) as LinearLayout
+        val linearLayoutReport = v.findViewById(R.id.linearLayoutReport) as LinearLayout
+        val linearLayoutDonate = v.findViewById(R.id.linearLayoutDonate) as LinearLayout
+        val attachedActivity = activity as MainActivity
+
         dict = initDict(context)
         versionText = v.findViewById<TextView>(R.id.textViewVersion)
         listNumText = v.findViewById<TextView>(R.id.textViewListNum)
@@ -52,6 +59,16 @@ class UpdateFragment : Fragment(), Fetcher.UpdaterListener {
         listNumText!!.text = dict!!.getListNum()
         linearLayoutUpdate.setOnClickListener {
             doUpdate()
+        }
+
+        linearLayoutReport.setOnClickListener {
+            val urlIntent = Intent(Intent.ACTION_VIEW)
+            urlIntent.data = Uri.parse("https://npes87184.github.io/PokeResearchDictionary/report.html")
+            startActivity(urlIntent)
+        }
+
+        linearLayoutDonate.setOnClickListener {
+            attachedActivity.billingManager?.launchPurchaseFlow(attachedActivity.DONATE_COFFEE_SKU_ID)
         }
 
         doUpdate()
