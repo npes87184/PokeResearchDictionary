@@ -26,33 +26,17 @@ It also has a web interface for reporting and listing research: [PokeResearchDic
 <img src="https://raw.github.com/npes87184/PokeResearchDictionary/master/img/2.png" width="450">
 
 # Latest Version
-* 1.3.1
+* 1.4.0
 
 # Changelog
+## 1.4.0
+* Redesign update fragment
+* Add app icon in the dict dialog
+
 ## 1.3.1
 * Support reporting research
 * Always show update button
 * Add donation button
-
-## 1.2.5
-* Update internal database
-* Compatible with Android P
-
-## 1.2.4
-* Show the correct changelog
-
-## 1.2.3
-* Show changelog of dictionary when updated.
-
-## 1.2.2
-* Update internal database.
-
-## 1.2.1
-* Add an option for setting dictionary language
-
-## 1.2.0
-* Add theme support
-* Add update button in DictDialog
 
 # Contributions
 ## Add dictionary of your own language
