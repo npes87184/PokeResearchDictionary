@@ -1,10 +1,10 @@
 {
-	"version": 1542938942,
+	"version": 1543837240,
 	"data": [
 		{"key": "Battle in a Gym 3 times", "value": "Jynx"},
 		{"key": "Battle in a Gym 5 times", "value": "Machop / Bulbasaur"},
 		{"key": "Battle in a Gym", "value": "Minun / Mankey"},
-		{"key": "Win a raid", "value": "Pineco"},
+		{"key": "Win a raid", "value": "Pineco / Porygon"},
 		{"key": "Win 2 raids", "value": "Quilava"},
 		{"key": "Win a level 3 or higher raid", "value": "Dratini"},
 		{"key": "Win 5 raids", "value": "Typhlosion"},
@@ -29,7 +29,7 @@
 		{"key": "Catch 2 Water-type Pokemon", "value": "Magikarp"},
 		{"key": "Catch 5 Water-type Pokemon", "value": "Krabby"},
 		{"key": "Catch 3 Electric, Water, or Bug-type Pokemon", "value": "Electrike"},
-		{"key": "Catch 3 Grass, Water, or Fire-type Pokemon", "value": "Pikachu"},
+		{"key": "Catch 3 Grass, Water, or Fire-type Pokemon", "value": "Pikachu / Numel"},
 		{"key": "Catch 3 Electric-type Pokemon", "value": "Pikachu"},
 		{"key": "Catch 5 Electric-type Pokemon", "value": "Mareep"},
 		{"key": "Catch 3 Fire-type Pokemon", "value": "Ponyta / Magcargo"},
