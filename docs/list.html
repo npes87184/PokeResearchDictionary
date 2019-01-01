@@ -28,15 +28,15 @@
                 <a href="https://github.com/npes87184/PokeResearchDictionary" class="brand-logo">PokeResearchDictionary</a>
                 <a href="#" data-target="mobile-dropdown" class="dropdown-trigger hide-on-med-and-up"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
-                    <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
+                    <li><a class="report_nav" href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
+                    <li><a class="list_nav" href="list.html"><i class="material-icons left">dvr</i>List</a></li>
                 </ul>
             </div>
         </nav>
     </div>
     <ul class="dropdown-content" id="mobile-dropdown">
-        <li><a href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
-        <li><a href="list.html"><i class="material-icons left">dvr</i>List</a></li>
+        <li><a class="report_nav" href="report.html"><i class="material-icons left">cloud_upload</i>Report</a></li>
+        <li><a class="list_nav" href="list.html"><i class="material-icons left">dvr</i>List</a></li>
     </ul>
 
     <div class="container">
@@ -78,6 +78,8 @@
         // language setting
         var lang = GetLan();
         var enu = {
+            list: "List",
+            report: "Report",
             desc: "Search the Pokemon Go research reward quickly from tile.",
             version: "Version",
             research: "Research",
@@ -85,11 +87,17 @@
         };
 
         var cht = {
+            list: "任務列表",
+            report: "回報任務",
             desc: "從快速磚中搜尋 Pokemon Go 田野任務獎勵寶可夢，可在遊戲中快速搜尋田野任務獎勵寶可夢。",
             version: "版本",
             research: "田野任務",
             reward: "獎勵"
         };
+        $('.report_nav').html('<i class="material-icons left">cloud_upload</i>' +
+                              GetStr("report", enu.report, lang));
+        $('.list_nav').html('<i class="material-icons left">dvr</i>' +
+                            GetStr("list", enu.list, lang))
         $('#desc').text(GetStr("desc", enu.desc, lang));
         $('#version_label').html('<i class="medium material-icons left">wb_sunny</i>' +
                                  GetStr("version", enu.version, lang));
