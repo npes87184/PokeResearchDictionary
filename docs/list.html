@@ -4,6 +4,7 @@
 <head>
 	<title>PokeResearchDictionary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -36,20 +37,20 @@
         <div class="row">
             <div class="col s12">
                 <h3>PokeDict</h3>
-                <p>Search the Pokemon Go research reward quickly from tile.</p>
+                <p id="desc">Search the Pokemon Go research reward quickly from tile.</p>
             </div>
         </div>
         <div class="row">
             <div class="col s12">
-                <h4><i class="medium material-icons left">wb_sunny</i>Version: </h4><h4 id="version"></h4>
+                <h4 id="version_label"><i class="medium material-icons left">wb_sunny</i>Version: </h4><h4 id="version"></h4>
             </div>
         </div>
         <div class="row">
 			<table id="list">
 				<thead>
 					<tr>
-						<th>Research</th>
-						<th>Reward</th>
+						<th id="research_label">Research</th>
+						<th id="reward_label">Reward</th>
 					</tr>
 				</thead>
 
@@ -57,6 +58,7 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="lang.js"></script>
     <script>
         // setup navbar
         $(document).ready(function(){
@@ -64,6 +66,27 @@
                 coverTrigger: false
             });
         });
+
+        // language setting
+        var lang = GetLan();
+        var enu = {
+            desc: "Search the Pokemon Go research reward quickly from tile.",
+            version: "Version",
+            research: "Research",
+            reward: "Reward"
+        };
+
+        var cht = {
+            desc: "從快速磚中搜尋 Pokemon Go 田野任務獎勵寶可夢，可在遊戲中快速搜尋田野任務獎勵寶可夢。",
+            version: "版本",
+            research: "田野任務",
+            reward: "獎勵"
+        };
+        $('#desc').text(GetStr("desc", enu.desc, lang));
+        $('#version_label').html('<i class="medium material-icons left">wb_sunny</i>' +
+                                 GetStr("version", enu.version, lang));
+        $('#research_label').text(GetStr("research", enu.research, lang));
+        $('#reward_label').text(GetStr("reward", enu.reward, lang));
 
         // load dictionary
         var userLang = navigator.language || navigator.userLanguage;
