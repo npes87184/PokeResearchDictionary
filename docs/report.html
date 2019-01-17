@@ -61,26 +61,17 @@
             </div>
         </div>
         <div class="row">
-            <form class="col s12" action="https://formspree.io/npes87184@gmail.com" method="POST">
-                <div class="row">
-                    <input type="hidden" name="_subject" value="New research from PokeDict">
-                    <input type="text" name="_gotcha" style="display:none">
-                    <input type="hidden" name="_next" value="./PokeResearchDictionary/report.html?thanks" />
-                    <div class="input-field col l8 s12">
-                        <i class="material-icons prefix">stars</i>
-                        <input id="research" type="text" class="validate" name="research" required>
-                        <label id="research_label" for="research">Research</label>
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Note</span>
+                        <p id="note_desc">Unfortunately, PokeResearchDictionary was banned by Google. I have tried to appeal. Sadly, Google still refused to unblock it. The service terminated. If you have any question or advice. Please contact me. Thanks all for all your support!</p>
                     </div>
-                    <div class="input-field col l4 s12">
-                        <i class="material-icons prefix">redeem</i>
-                        <input id="reward" type="text" class="validate" name="reward" required>
-                        <label id="reward_label" for="reward">Reward</label>
+                    <div class="card-action">
+                        <a id="mail" href="mailto:npes87184@gmail.com">Contact Me<i class="material-icons right">send</i></a>
                     </div>
                 </div>
-                <button id="submit_btn" class="btn center waves-effect waves-light" type="submit">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -103,27 +94,24 @@
             list: "List",
             report: "Report",
             desc: "Search the Pokemon Go research reward quickly from tile.",
-            research: "Research",
-            reward: "Reward",
-            submit: "Submit"
+            note: "Unfortunately, PokeResearchDictionary was banned by Google. I have tried to appeal. Sadly, Google still refused to unblock it. The service terminated. If you have any question or advice, please contact me. Thanks all for all your support!",
+            contact: "Contact Me"
         };
 
         var cht = {
             list: "任務列表",
             report: "回報任務",
             desc: "從快速磚中搜尋 Pokemon Go 田野任務獎勵寶可夢，可在遊戲中快速搜尋田野任務獎勵寶可夢。",
-            research: "田野任務",
-            reward: "獎勵",
-            submit: "送出"
+            note: "不幸的是，寶可夢田野字典被 Google 停權了。 努力嘗試上訴過。 可惜的是，Google 仍然拒絕解除停權寶可夢田野字典。 服務被迫終止。 如果您有任何問題或建議。 請聯繫我。 謝謝大家的支持！",
+            contact: "聯繫我"
         };
         $('.report_nav').html('<i class="material-icons left">cloud_upload</i>' +
                               GetStr("report", enu.report, lang));
         $('.list_nav').html('<i class="material-icons left">dvr</i>' +
                             GetStr("list", enu.list, lang))
         $('#desc').text(GetStr("desc", enu.desc, lang));
-        $('#research_label').text(GetStr("research", enu.research, lang));
-        $('#reward_label').text(GetStr("reward", enu.reward, lang));
-        $('#submit_btn').html(GetStr("submit", enu.submit, lang) +
+        $('#note_desc').text(GetStr("note", enu.note, lang));
+        $('#mail').html(GetStr("contact", enu.contact, lang) +
                               '<i class="material-icons right">send</i>');
 
         // show thank you, when url contains thanks
